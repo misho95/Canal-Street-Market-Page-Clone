@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
+
 const Logo = () => {
   return (
-    <a
-      href="/"
+    <Link
+      to="/"
       className="logo js-logo"
       style={{ transform: "matrix(1, 0, 0, 1, 55, 0)" }}
     >
@@ -13,13 +15,7 @@ const Logo = () => {
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs></defs>
-        <g
-          id="R2"
-          stroke="none"
-          stroke-width="1"
-          fill="none"
-          fill-rule="evenodd"
-        >
+        <g id="R2" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
           <g id="1440_HP_v2-1" transform="translate(-60.000000, -60.000000)">
             <g id="Group-46" transform="translate(60.000000, 60.000000)">
               <g id="Group-3" transform="translate(0.000000, 0.304186)">
@@ -142,7 +138,7 @@ const Logo = () => {
           </g>
         </g>
       </svg>
-    </a>
+    </Link>
   );
 };
 

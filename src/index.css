@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: ApercuMonoProMedium;
+  src: url(./assets/fonts/ApercuMonoProMedium.ttf);
+}
+
+@font-face {
+  font-family: ApercuMonoProBold;
+  src: url(./assets/fonts/ApercuMonoProBold.ttf);
+}
+
+@font-face {
+  font-family: ApercuMonoProLight;
+  src: url(./assets/fonts/ApercuMonoProLight.ttf);
+}
+
+@font-face {
+  font-family: ApercuMonoProRegular;
+  src: url(./assets/fonts/ApercuMonoProRegular.ttf);
+}

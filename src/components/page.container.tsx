@@ -1,25 +1,40 @@
 import clsx from "clsx";
-import { ReactNode } from "react";
+import { ReactNode, useContext } from "react";
 import Logo from "./logo";
+import { useLocation, useNavigate } from "react-router-dom";
+import { AnimateContext } from "../App";
 
 type PropsType = {
   children: ReactNode;
-  active: {
-    activePage: string;
-    setActivePage: (arg: string) => void;
-  };
   value: string;
   symbol?: string;
 };
 
-const PageContainer = ({ children, active, value, symbol }: PropsType) => {
+const PageContainer = ({ children, value, symbol }: PropsType) => {
+  const location = useLocation();
+  const activeLink = location.pathname.split("/")[1];
+  const navigate = useNavigate();
+  const { animate } = useContext(AnimateContext);
+
+  const handleNavigation = () => {
+    navigate(`/${value}`);
+  };
+
   return (
     <div
-      onClick={() => active.setActivePage(value)}
-      className={clsx("w-[80px] duration-300 relative ", {
-        "w-full h-full pt-[250px] px-[60px] pb-[120px] ":
-          active.activePage === value,
-        "bg-[#fff]": value === "home",
+      onClick={handleNavigation}
+      className={clsx(`w-[80px] duration-300 relative`, {
+        "w-full h-full": activeLink === value,
+        "cursor-pointer": activeLink !== value,
+        "animate-[slideBar_0.8s_linear]":
+          activeLink !== value && value === "" && !animate,
+        "animate-[slideBar_0.6s_linear]":
+          activeLink !== value && value === "food" && !animate,
+        "animate-[slideBar_0.4s_linear]":
+          activeLink !== value && value === "retail" && !animate,
+        "animate-[slideBar_0.2s_linear]":
+          activeLink !== value && value === "community" && !animate,
+        "bg-[#fff]": value === "",
         "bg-[#5ea3ec]": value === "food",
         "bg-[#f64444]": value === "retail",
         "bg-[#ffb400]": value === "community",
@@ -28,7 +43,7 @@ const PageContainer = ({ children, active, value, symbol }: PropsType) => {
       {!symbol && (
         <div
           style={
-            active.activePage === value
+            activeLink === value
               ? { transform: "matrix(1, 0, 0, 1, 55, 0)" }
               : { transform: "matrix(0.833333, 0, 0, 0.833333, 0, 0)" }
           }
@@ -39,20 +54,20 @@ const PageContainer = ({ children, active, value, symbol }: PropsType) => {
       )}
       <div
         className={clsx(
-          " duration-300 flex flex-col items-center pt-[100px] absolute w-full h-full",
+          "duration-300 flex flex-col items-center pt-[100px] absolute w-[80px] h-full",
           {
-            "opacity-0": active.activePage === value,
+            "opacity-0": activeLink === value,
           }
         )}
       >
         {symbol && <div className="text-2xl select-none">{symbol}</div>}
         {value !== "home" && (
-          <div className="absolute top-1/2 rotate-90 text-4xl uppercase select-none">
+          <div className="absolute top-1/2 rotate-90 text-[20px] uppercase select-none font-ApercuMonoProRegular">
             {value}
           </div>
         )}
       </div>
-      {active.activePage === value && children}
+      {activeLink === value && children}
     </div>
   );
 };
