@@ -23,8 +23,8 @@ const PageContainer = ({ children, value, symbol }: PropsType) => {
   return (
     <div
       onClick={handleNavigation}
-      className={clsx(`w-[80px] duration-300 relative`, {
-        "w-full h-full": activeLink === value,
+      className={clsx(`w-[60px] duration-300 relative`, {
+        "w-[calc(100%-60px*3)] h-full": activeLink === value,
         "cursor-pointer": activeLink !== value,
         "animate-[slideBar_0.8s_linear]":
           activeLink !== value && value === "" && !animate,
@@ -54,7 +54,7 @@ const PageContainer = ({ children, value, symbol }: PropsType) => {
       )}
       <div
         className={clsx(
-          "duration-300 flex flex-col items-center pt-[100px] absolute w-[80px] h-full",
+          "duration-300 flex flex-col items-center pt-[100px] absolute w-[60px] h-full",
           {
             "opacity-0": activeLink === value,
           }

@@ -21,3 +21,8 @@
   font-family: ApercuMonoProRegular;
   src: url(./assets/fonts/ApercuMonoProRegular.ttf);
 }
+
+*::selection {
+  background-color: black;
+  color: white;
+}

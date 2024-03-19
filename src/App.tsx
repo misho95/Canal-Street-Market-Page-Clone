@@ -3,6 +3,7 @@ import PageContainer from "./components/page.container";
 import HomePage from "./pages/home-page";
 import clsx from "clsx";
 import { createContext, useEffect, useState } from "react";
+import RetailPage from "./pages/retail-page";
 
 export const AnimateContext = createContext<any>(null);
 
@@ -34,7 +35,7 @@ function App() {
           2
         </PageContainer>
         <PageContainer value="retail" symbol={"零售"}>
-          3
+          <RetailPage />
         </PageContainer>
         <PageContainer value="community" symbol={"社区"}>
           4
