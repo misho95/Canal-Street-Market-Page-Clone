@@ -20,7 +20,7 @@ const RetailList = ({ data, size }: PropsType) => {
         } duration-1000 z-40`}
         style={{
           top: Math.random() * (size.height - 350),
-          left: Math.random() * (size.width - 50),
+          left: Math.random() * (size.width - 250),
         }}
       />
 
