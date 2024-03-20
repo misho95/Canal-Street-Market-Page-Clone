@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import PageTitle from "../components/page.title";
 import RetailList from "./retail-list";
+import Rose from "../assets/rose.svg";
 
 const RetailPage = () => {
   const [show, setShow] = useState(false);
@@ -203,7 +204,7 @@ const RetailPage = () => {
         show ? "opacity-100" : "opacity-0"
       } duration-300`}
     >
-      <section className="pt-[250px] px-[60px] pb-[120px]">
+      <section className="pt-[250px] px-[60px] pb-[120px] flex flex-col gap-[50px]">
         <div className="flex justify-between">
           <PageTitle title={"retail"} />
           <div className="text-[14px] font-ApercuMonoProRegular leading-[21px] text-right">
@@ -247,6 +248,29 @@ const RetailPage = () => {
               />
             );
           })}
+        </div>
+        <div
+          className="py-[110px] flex justify-between"
+          style={{
+            backgroundImage:
+              "repeating-linear-gradient(-45deg,#000,#000 1px,transparent 0,transparent 68px),repeating-linear-gradient(45deg,#000,#000 1px,transparent 0,transparent 68px),repeating-linear-gradient(-45deg,#000,#000 1px,transparent 0,transparent 71px),repeating-linear-gradient(45deg,#000,#000 1px,transparent 0,transparent 70px)",
+            backgroundPosition: "0 101%,0 101%,0 0,0 0",
+            backgroundSize: "93px 50px,93px 50px,100px 50px,100px 50px",
+            backgroundRepeat: "repeat-x",
+          }}
+        >
+          <div>
+            <img src={Rose} />
+          </div>
+          <div className="flex flex-col justify-center items-center font-ApercuMonoProMedium">
+            <h1 className="text-[100px] leading-[100px] text-center capitalize mb-[30px]">
+              the best of NYC
+            </h1>
+            <p>All under one roof</p>
+          </div>
+          <div>
+            <img src={Rose} />
+          </div>
         </div>
       </section>
     </div>
