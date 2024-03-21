@@ -60,9 +60,13 @@ const PageContainer = ({ children, value, symbol }: PropsType) => {
           }
         )}
       >
-        {symbol && <div className="text-2xl select-none">{symbol}</div>}
+        {symbol && (
+          <div className="text-xl select-none font-ApercuMonoProLight">
+            {symbol}
+          </div>
+        )}
         {value !== "home" && (
-          <div className="absolute top-1/2 rotate-90 text-[20px] uppercase select-none font-ApercuMonoProRegular">
+          <div className="absolute top-1/2 rotate-90 text-[20px] capitalize select-none font-ApercuMonoProRegular">
             {value}
           </div>
         )}

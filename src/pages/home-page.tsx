@@ -47,37 +47,56 @@ const HomePage = () => {
         }
         className="w-full h-full object-cover"
       />
-      <h1>A New Kind of Market</h1>
-      <div>
-        <div>
-          <img
-            src={
-              "https://images.prismic.io/canalstreetmarket/8f74dfabde9ebd66d0d078ba6cf794c77dc8ac5b_home_page_one.jpg?auto=compress,format"
-            }
-          />
-          <p>
-            Merging retail, food, art, and culture, Canal Street Market
-            highlights top retail and design concepts, restaurants, and
-            up-and-coming players in the downtown New York City community.
-          </p>
-        </div>
-        <div>
-          <img
-            src={
-              "https://images.prismic.io/canalstreetmarket/20c7997073b456fda0e6de872d23b6183892bdde_home_page_two.jpg?auto=compress,format"
-            }
-          />
-          <p>Retail Market Hours: Thursday – Sun: 11:00AM - 7:00PM</p>
-        </div>
-        <div>
-          <img
-            src={
-              "https://images.prismic.io/canalstreetmarket/13a988aff3e9c672350fe8330eb7386c3a85eeb9_home_page_three.jpg?auto=compress,format"
-            }
-          />
-          <p>Food Hall Hours: Mon – Sun: 11:00AM - 8:00PM</p>
-        </div>
-      </div>
+      <section className="p-[60px] flex flex-col gap-[50px]">
+        <h1 className="text-[113px] mb-[60px] w-full max-w-[745px] font-ApercuMonoProLight">
+          A New Kind of Market
+        </h1>
+        <article className="grid grid-cols-3 gap-[60px] w-full h-fit">
+          <div>
+            <div className="w-fit h-fit mb-[30px]">
+              <img
+                src={
+                  "https://images.prismic.io/canalstreetmarket/8f74dfabde9ebd66d0d078ba6cf794c77dc8ac5b_home_page_one.jpg?auto=compress,format"
+                }
+              />
+            </div>
+            <p className="font-ApercuMonoProLight text-[14px] leading-[21px]">
+              Merging retail, food, art, and culture, Canal Street Market
+              highlights top retail and design concepts, restaurants, and
+              up-and-coming players in the downtown New York City community.
+            </p>
+          </div>
+          <div>
+            <div className="w-fit h-fit mb-[30px]">
+              <img
+                src={
+                  "https://images.prismic.io/canalstreetmarket/20c7997073b456fda0e6de872d23b6183892bdde_home_page_two.jpg?auto=compress,format"
+                }
+              />
+            </div>
+            <p className="font-ApercuMonoProLight text-[14px] leading-[21px]">
+              Retail Market Hours: Thursday – Sun: 11:00AM - 7:00PM
+            </p>
+          </div>
+          <div>
+            <div className="w-fit h-fit mb-[30px]">
+              <img
+                src={
+                  "https://images.prismic.io/canalstreetmarket/13a988aff3e9c672350fe8330eb7386c3a85eeb9_home_page_three.jpg?auto=compress,format"
+                }
+              />
+            </div>
+            <p className="font-ApercuMonoProLight text-[14px] leading-[21px]">
+              Food Hall Hours: Mon – Sun: 11:00AM - 8:00PM
+            </p>
+          </div>
+        </article>
+        <article>
+          <h2>活動</h2>
+          <h1>Market Events</h1>
+          <h2>活動</h2>
+        </article>
+      </section>
     </div>
   );
 };
